@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "988625775505",
+    "firebase_url": "https://walkhero-d53d8-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "walkhero-d53d8",
+    "storage_bucket": "walkhero-d53d8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988625775505:android:50c25d88a607a97d3f8830",
+        "android_client_info": {
+          "package_name": "com.wa2goose.walkhero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988625775505-tacosdcp21eba2uj7c5014gokqrbhgb7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wa2goose.walkhero",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "988625775505-iruua78fopi8obthi64bc7q1scuf38rb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbEhEyABZQds2jYqLid88pc-R6orjvlNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988625775505-iruua78fopi8obthi64bc7q1scuf38rb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "988625775505-90qg3etldmrrdu8fq378j6u5aj7r8pbe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wa2goose.walkhero"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
