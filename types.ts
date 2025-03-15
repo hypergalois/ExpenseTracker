@@ -31,14 +31,33 @@ export type accountOptionType = {
   routeName?: any;
 };
 
-export type TypoProps = {
+type TextWeight =
+  | "Black"
+  | "BlackItalic"
+  | "Bold"
+  | "BoldItalic"
+  | "ExtraBold"
+  | "ExtraBoldItalic"
+  | "ExtraLight"
+  | "ExtraLightItalic"
+  | "Italic"
+  | "Light"
+  | "LightItalic"
+  | "Medium"
+  | "MediumItalic"
+  | "Regular"
+  | "SemiBold"
+  | "SemiBoldItalic"
+  | "Thin"
+  | "ThinItalic";
+
+export interface StyledTextProps extends TextProps {
+  children: React.ReactNode;
   size?: number;
+  weight?: TextWeight;
   color?: string;
-  fontWeight?: TextStyle["fontWeight"];
-  children: any | null;
   style?: TextStyle;
-  textProps?: TextProps;
-};
+}
 
 export type IconComponent = React.ComponentType<{
   height?: number;
