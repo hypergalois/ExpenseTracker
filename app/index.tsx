@@ -1,9 +1,18 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { colors } from "@/constants/theme";
 import images from "@/constants/images";
+import { useRouter } from "expo-router";
 
 const Index = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/welcome");
+    }, 2000);
+  }, []);
+
   return (
     <View style={styles.container}>
       <Image source={images.logo} style={styles.logo} resizeMode="contain" />
@@ -18,7 +27,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.neutral900,
   },
   logo: {
     height: "20%",
