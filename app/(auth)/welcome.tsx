@@ -1,30 +1,44 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import StyledText from "@/components/StyledText";
+import { colors, spacingX, spacingY } from "@/constants/theme";
+import { verticalScale } from "@/utils/styling";
 
 const Welcome = () => {
-  return (
-    <View>
-      <StyledText size={24}>Welcome to the app!</StyledText>
-      <Text style={{ color: "white" }}>Hello</Text>
-
-      <>
-        <StyledText weight="Bold" size={24}>
-          Hola Kanit Bold
-        </StyledText>
-
-        <StyledText weight="ExtraLightItalic" size={18} color="#666">
-          Texto en ExtraLightItalic
-        </StyledText>
-
-        <StyledText weight="SemiBold" style={{ textAlign: "center" }}>
-          Centered SemiBold
-        </StyledText>
-      </>
-    </View>
-  );
+  return <View></View>;
 };
 
 export default Welcome;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: "space-between",
+    paddingTop: spacingY._7,
+  },
+  welcomeImage: {
+    width: "100%",
+    height: verticalScale(300),
+    alignSelf: "center",
+    marginTop: verticalScale(100),
+  },
+  loginButton: {
+    alignSelf: "flex-end",
+    marginRight: spacingX._20,
+  },
+  footer: {
+    backgroundColor: colors.neutral900,
+    alignItems: "center",
+    paddingTop: verticalScale(30),
+    paddingBottom: verticalScale(45),
+    gap: spacingX._20,
+    shadowColor: "white",
+    shadowOffset: { width: 0, height: -10 },
+    elevation: 10,
+    shadowRadius: 25,
+    shadowOpacity: 0.15,
+  },
+  buttonContainer: {
+    width: "100%",
+    paddingHorizontal: spacingX._25,
+  },
+});
