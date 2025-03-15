@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  Text,
   View,
   StyleSheet,
   KeyboardAvoidingView,
@@ -8,22 +7,27 @@ import {
   Button,
   ActivityIndicator,
 } from "react-native";
-import auth from "@react-native-firebase/auth";
-import { FirebaseError } from "firebase/app";
+
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "@react-native-firebase/auth";
 
 export default function Index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const authInstance = getAuth();
+
   const signUp = async () => {
     setLoading(true);
     try {
-      await auth().createUserWithEmailAndPassword(email, password);
+      await createUserWithEmailAndPassword(authInstance, email, password);
       alert("Check your emails!");
     } catch (e: any) {
-      const err = e as FirebaseError;
-      alert("Registration failed: " + err.message);
+      alert("Registration failed: " + e.message);
     } finally {
       setLoading(false);
     }
@@ -32,10 +36,9 @@ export default function Index() {
   const signIn = async () => {
     setLoading(true);
     try {
-      await auth().signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(authInstance, email, password);
     } catch (e: any) {
-      const err = e as FirebaseError;
-      alert("Sign in failed: " + err.message);
+      alert("Sign in failed: " + e.message);
     } finally {
       setLoading(false);
     }
