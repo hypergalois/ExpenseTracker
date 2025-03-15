@@ -1,5 +1,5 @@
 import { Href } from "expo-router";
-import { Firestore, Timestamp } from "firebase/firestore";
+import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
 import { Icon } from "phosphor-react-native";
 import React, { ReactNode } from "react";
 import {
@@ -73,7 +73,7 @@ export type TransactionType = {
   type: string;
   amount: number;
   category?: string;
-  date: Date | Timestamp | string;
+  date: Date | FirebaseFirestoreTypes.Timestamp | string;
   description?: string;
   image?: any;
   uid?: string;
