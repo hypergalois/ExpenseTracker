@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import React from "react";
 import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
@@ -7,8 +7,11 @@ import StyledText from "@/components/StyledText";
 import Input from "@/components/Input";
 import { At, Lock } from "phosphor-react-native";
 import Button from "@/components/Button";
+import { useRouter } from "expo-router";
 
 const Login = () => {
+  const router = useRouter();
+
   const emailRef = React.useRef("");
   const passwordRef = React.useRef("");
 
@@ -73,7 +76,25 @@ const Login = () => {
         </Button>
       </View>
 
-      <View style={styles.footer}></View>
+      <View style={styles.footer}>
+        <StyledText size={15} color={colors.text}>
+          Don't have an account?
+        </StyledText>
+        <Pressable
+          onPress={() => {
+            router.push("/(auth)/register");
+          }}
+        >
+          <StyledText
+            size={15}
+            weight="Medium"
+            color={colors.primary}
+            style={{ textDecorationLine: "underline" }}
+          >
+            Sign up
+          </StyledText>
+        </Pressable>
+      </View>
     </View>
   );
 };
