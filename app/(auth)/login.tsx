@@ -77,7 +77,7 @@ const Login = () => {
 
         <Button
           onPress={handleSubmit}
-          style={{ marginTop: spacingY._20 }}
+          style={{ marginTop: spacingY._10 }}
           loading={isLoading}
         >
           <StyledText size={22} weight="Medium" color={colors.neutral900}>
@@ -92,7 +92,7 @@ const Login = () => {
         </StyledText>
         <Pressable
           onPress={() => {
-            router.push("/(auth)/register");
+            router.replace("/(auth)/register");
           }}
         >
           <StyledText
