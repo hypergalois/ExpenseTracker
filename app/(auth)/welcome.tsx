@@ -50,8 +50,8 @@ const Welcome = () => {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button onPress={() => {}} loading={true}>
-            <StyledText size={17} weight="Medium" color={colors.neutral900}>
+          <Button onPress={() => {}}>
+            <StyledText size={22} weight="Medium" color={colors.neutral900}>
               Get Started
             </StyledText>
           </Button>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: verticalScale(300),
     alignSelf: "center",
-    marginTop: verticalScale(100),
+    marginTop: verticalScale(70),
   },
   loginButton: {
     alignSelf: "flex-end",
@@ -94,5 +94,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: "100%",
     paddingHorizontal: spacingX._25,
+    paddingTop: spacingY._15,
   },
 });
