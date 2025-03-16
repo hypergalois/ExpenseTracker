@@ -1,12 +1,8 @@
-import { Href } from "expo-router";
 import { FirebaseFirestoreTypes } from "@react-native-firebase/firestore";
 import { Icon } from "phosphor-react-native";
 import React, { ReactNode } from "react";
 import {
-  ActivityIndicator,
   ActivityIndicatorProps,
-  ImageStyle,
-  PressableProps,
   TextInput,
   TextInputProps,
   TextProps,
@@ -14,6 +10,7 @@ import {
   TouchableOpacityProps,
   ViewStyle,
 } from "react-native";
+import { colors } from "./constants/theme";
 
 export type ScreenWrapperProps = {
   style?: ViewStyle;
@@ -57,6 +54,11 @@ export interface StyledTextProps extends TextProps {
   weight?: TextWeight;
   color?: string;
   style?: TextStyle;
+}
+
+export interface LoadingProps extends ActivityIndicatorProps {
+  size?: number | "small" | "large";
+  color?: string;
 }
 
 export type IconComponent = React.ComponentType<{
