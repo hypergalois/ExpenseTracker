@@ -4,6 +4,7 @@ import StyledText from "@/components/StyledText";
 import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import images from "@/constants/images";
+import Button from "@/components/Button";
 
 const Welcome = () => {
   return (
@@ -48,7 +49,13 @@ const Welcome = () => {
           </StyledText>
         </View>
 
-        <View style={styles.buttonContainer}></View>
+        <View style={styles.buttonContainer}>
+          <Button onPress={() => {}}>
+            <StyledText size={17} weight="Medium" color={colors.neutral900}>
+              Get Started
+            </StyledText>
+          </Button>
+        </View>
       </View>
     </View>
   );
