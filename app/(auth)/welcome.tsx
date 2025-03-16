@@ -5,6 +5,11 @@ import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import images from "@/constants/images";
 import Button from "@/components/Button";
+import Animated, {
+  FadeIn,
+  FadeInDown,
+  useSharedValue,
+} from "react-native-reanimated";
 
 const Welcome = () => {
   return (
@@ -19,7 +24,8 @@ const Welcome = () => {
           </StyledText>
         </TouchableOpacity>
 
-        <Image
+        <Animated.Image
+          entering={FadeIn.duration(1250)}
           source={images.welcome}
           style={styles.welcomeImage}
           resizeMode="contain"
@@ -27,7 +33,10 @@ const Welcome = () => {
       </View>
 
       <View style={styles.footer}>
-        <View style={{ alignItems: "center" }}>
+        <Animated.View
+          entering={FadeInDown.duration(1500).springify().damping(12)}
+          style={{ alignItems: "center" }}
+        >
           <StyledText
             size={30}
             weight="Bold"
@@ -35,9 +44,15 @@ const Welcome = () => {
           >
             Always take control{"\n"}of your finances
           </StyledText>
-        </View>
+        </Animated.View>
 
-        <View style={{ alignItems: "center", gap: 2 }}>
+        <Animated.View
+          entering={FadeInDown.duration(1500)
+            .delay(300)
+            .springify()
+            .damping(12)}
+          style={{ alignItems: "center", gap: 2 }}
+        >
           <StyledText
             size={17}
             color={colors.textLight}
@@ -47,15 +62,21 @@ const Welcome = () => {
             Finances must be arranged to set a better{"\n"}lifestyle in the
             future
           </StyledText>
-        </View>
+        </Animated.View>
 
-        <View style={styles.buttonContainer}>
+        <Animated.View
+          entering={FadeInDown.duration(1000)
+            .delay(500)
+            .springify()
+            .damping(12)}
+          style={styles.buttonContainer}
+        >
           <Button onPress={() => {}}>
             <StyledText size={22} weight="Medium" color={colors.neutral900}>
               Get Started
             </StyledText>
           </Button>
-        </View>
+        </Animated.View>
       </View>
     </View>
   );
