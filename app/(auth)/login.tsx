@@ -3,11 +3,24 @@ import React from "react";
 import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import BackButton from "@/components/BackButton";
+import StyledText from "@/components/StyledText";
 
 const Login = () => {
   return (
     <View style={styles.container}>
-      <BackButton />
+      <BackButton iconSize={28} />
+
+      <View style={{ marginTop: spacingY._20, gap: 5 }}>
+        <StyledText style={{ lineHeight: 50 }} size={33} weight="Bold">
+          Hey!{"\n"}Welcome back
+        </StyledText>
+      </View>
+
+      <View style={styles.form}>
+        <StyledText size={20} weight="Light" color={colors.textLighter}>
+          Login now to track all your expenses!
+        </StyledText>
+      </View>
     </View>
   );
 };

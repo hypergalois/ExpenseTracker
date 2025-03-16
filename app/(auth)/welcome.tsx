@@ -16,7 +16,7 @@ const Welcome = () => {
       <View>
         <TouchableOpacity
           onPress={() => {
-            router.push("/(auth)/register");
+            router.push("/(auth)/login");
           }}
           style={styles.loginButton}
         >
