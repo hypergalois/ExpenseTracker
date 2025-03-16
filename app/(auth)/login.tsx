@@ -4,6 +4,8 @@ import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import BackButton from "@/components/BackButton";
 import StyledText from "@/components/StyledText";
+import Input from "@/components/Input";
+import { At } from "phosphor-react-native";
 
 const Login = () => {
   return (
@@ -20,6 +22,16 @@ const Login = () => {
         <StyledText size={20} weight="Light" color={colors.textLighter}>
           Login now to track all your expenses!
         </StyledText>
+        <Input
+          placeholder="Enter your email"
+          icon={
+            <At
+              size={verticalScale(26)}
+              color={colors.neutral300}
+              weight="fill"
+            />
+          }
+        />
       </View>
     </View>
   );
