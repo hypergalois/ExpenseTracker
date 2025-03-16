@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View } from "react-native";
+import { Alert, Pressable, StyleSheet, View } from "react-native";
 import React from "react";
 import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
@@ -17,7 +17,15 @@ const Login = () => {
 
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    if (!emailRef.current || !passwordRef.current) {
+      Alert.alert("Login", "Please fill in all fields");
+      return;
+    }
+
+    console.log("Email:", emailRef.current);
+    console.log("Password:", passwordRef.current);
+  };
 
   return (
     <View style={styles.container}>
@@ -45,6 +53,7 @@ const Login = () => {
               weight="fill"
             />
           }
+          autoComplete="email"
         />
         <Input
           placeholder="Enter your password"
@@ -59,6 +68,7 @@ const Login = () => {
               weight="fill"
             />
           }
+          autoComplete="password"
         />
 
         <StyledText style={styles.forgotPassword} weight={"Medium"} size={15}>

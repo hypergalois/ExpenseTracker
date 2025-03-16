@@ -16,6 +16,8 @@ const Input = ({
     <View style={[styles.container, containerStyle]}>
       {icon}
       <TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
         style={[styles.input, inputStyle]}
         ref={inputRef}
         placeholderTextColor={colors.neutral400}
