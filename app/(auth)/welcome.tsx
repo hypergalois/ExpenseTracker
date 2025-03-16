@@ -1,21 +1,25 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
 import StyledText from "@/components/StyledText";
 import { colors, spacingX, spacingY } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import images from "@/constants/images";
 import Button from "@/components/Button";
-import Animated, {
-  FadeIn,
-  FadeInDown,
-  useSharedValue,
-} from "react-native-reanimated";
+import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
+import { useRouter } from "expo-router";
 
 const Welcome = () => {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <View>
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/(auth)/register");
+          }}
+          style={styles.loginButton}
+        >
           <StyledText
             weight={"Medium"}
             style={{ textDecorationLine: "underline" }}
@@ -71,7 +75,11 @@ const Welcome = () => {
             .damping(12)}
           style={styles.buttonContainer}
         >
-          <Button onPress={() => {}}>
+          <Button
+            onPress={() => {
+              router.push("/(auth)/register");
+            }}
+          >
             <StyledText size={22} weight="Medium" color={colors.neutral900}>
               Get Started
             </StyledText>
