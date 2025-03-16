@@ -7,3 +7,5 @@
 - At then end of both register and login pages, I should add a little separator line and then a login with Google button, make it white and with a logo a the left.
 
 - I should implement dark and light mode, the default template comes with that so I should check it.
+
+- I should make custom alerts, and make them more intuitive.
