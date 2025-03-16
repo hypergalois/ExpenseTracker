@@ -24,6 +24,30 @@ const Welcome = () => {
           resizeMode="contain"
         />
       </View>
+
+      <View style={styles.footer}>
+        <View style={{ alignItems: "center" }}>
+          <StyledText
+            size={30}
+            weight="Bold"
+            style={{ textAlign: "center", lineHeight: 40 }}
+          >
+            Always take control{"\n"}of your finances
+          </StyledText>
+        </View>
+
+        <View style={{ alignItems: "center", gap: 2 }}>
+          <StyledText
+            size={17}
+            color={colors.textLight}
+            weight="Light"
+            style={{ textAlign: "center" }}
+          >
+            Finances must be arranged to set a better{"\n"}lifestyle in the
+            future
+          </StyledText>
+        </View>
+      </View>
     </View>
   );
 };
@@ -34,6 +58,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
     paddingTop: spacingY._7,
+    flex: 1,
   },
   welcomeImage: {
     width: "100%",
@@ -48,14 +73,14 @@ const styles = StyleSheet.create({
   footer: {
     backgroundColor: colors.neutral900,
     alignItems: "center",
-    paddingTop: verticalScale(30),
+    paddingTop: verticalScale(40),
     paddingBottom: verticalScale(45),
     gap: spacingX._20,
     shadowColor: "white",
     shadowOffset: { width: 0, height: -10 },
     elevation: 10,
     shadowRadius: 25,
-    shadowOpacity: 0.15,
+    shadowOpacity: 0.05,
   },
   buttonContainer: {
     width: "100%",
