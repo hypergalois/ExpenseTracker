@@ -47,6 +47,8 @@ const Welcome = () => {
             future
           </StyledText>
         </View>
+
+        <View style={styles.buttonContainer}></View>
       </View>
     </View>
   );
