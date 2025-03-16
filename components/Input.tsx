@@ -4,7 +4,14 @@ import { InputProps } from "@/types";
 import { colors, radius, spacingX } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 
-const Input = ({ icon, containerStyle, inputStyle, inputRef }: InputProps) => {
+const Input = ({
+  icon,
+  containerStyle,
+  inputStyle,
+  inputRef,
+  placeholder,
+  ...props
+}: InputProps) => {
   return (
     <View style={[styles.container, containerStyle]}>
       {icon}
@@ -12,7 +19,8 @@ const Input = ({ icon, containerStyle, inputStyle, inputRef }: InputProps) => {
         style={[styles.input, inputStyle]}
         ref={inputRef}
         placeholderTextColor={colors.neutral400}
-        placeholder="Email"
+        placeholder={placeholder}
+        {...props}
       />
     </View>
   );
@@ -35,7 +43,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    fontSize: verticalScale(16),
+    fontSize: verticalScale(15),
     color: colors.white,
   },
 });

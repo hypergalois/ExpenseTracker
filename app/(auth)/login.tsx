@@ -5,9 +5,17 @@ import { verticalScale } from "@/utils/styling";
 import BackButton from "@/components/BackButton";
 import StyledText from "@/components/StyledText";
 import Input from "@/components/Input";
-import { At } from "phosphor-react-native";
+import { At, Lock } from "phosphor-react-native";
+import Button from "@/components/Button";
 
 const Login = () => {
+  const emailRef = React.useRef("");
+  const passwordRef = React.useRef("");
+
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const handleSubmit = () => {};
+
   return (
     <View style={styles.container}>
       <BackButton iconSize={28} />
@@ -24,6 +32,9 @@ const Login = () => {
         </StyledText>
         <Input
           placeholder="Enter your email"
+          onChangeText={(value) => {
+            emailRef.current = value;
+          }}
           icon={
             <At
               size={verticalScale(26)}
@@ -32,7 +43,37 @@ const Login = () => {
             />
           }
         />
+        <Input
+          placeholder="Enter your password"
+          onChangeText={(value) => {
+            passwordRef.current = value;
+          }}
+          secureTextEntry
+          icon={
+            <Lock
+              size={verticalScale(26)}
+              color={colors.neutral300}
+              weight="fill"
+            />
+          }
+        />
+
+        <StyledText style={styles.forgotPassword} weight={"Medium"} size={15}>
+          Forgot password?
+        </StyledText>
+
+        <Button
+          onPress={handleSubmit}
+          style={{ marginTop: spacingY._20 }}
+          loading={isLoading}
+        >
+          <StyledText size={22} weight="Medium" color={colors.neutral900}>
+            Login
+          </StyledText>
+        </Button>
       </View>
+
+      <View style={styles.footer}></View>
     </View>
   );
 };
@@ -57,6 +98,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
     fontWeight: "500",
     color: colors.text,
+    textDecorationLine: "underline",
   },
   footer: {
     flexDirection: "row",
