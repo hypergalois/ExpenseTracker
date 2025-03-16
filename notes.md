@@ -9,3 +9,7 @@
 - I should implement dark and light mode, the default template comes with that so I should check it.
 
 - I should make custom alerts, and make them more intuitive.
+
+- Add haptics on touch and on response to actions is quite cool
+
+- As I can't run the app on the physical device due to not having an Apple Developer account, I could make a fork without a development build, so not using react-native-firebase and just to test the UI.
