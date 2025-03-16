@@ -50,7 +50,7 @@ const Welcome = () => {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button onPress={() => {}}>
+          <Button onPress={() => {}} loading={true}>
             <StyledText size={17} weight="Medium" color={colors.neutral900}>
               Get Started
             </StyledText>
