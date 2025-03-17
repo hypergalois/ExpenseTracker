@@ -13,3 +13,7 @@
 - Add haptics on touch and on response to actions is quite cool
 
 - As I can't run the app on the physical device due to not having an Apple Developer account, I could make a fork without a development build, so not using react-native-firebase and just to test the UI.
+
+- For the onboarding carousel I need to get the assets from somewhere, and also I'd love to make them like move, I saw a tutorial on "Code with Nomi"
+
+- Also, at the end of the onboarding, I'd love an animation where like it joins everything into a whirl, like it creates your personalised profile or something
